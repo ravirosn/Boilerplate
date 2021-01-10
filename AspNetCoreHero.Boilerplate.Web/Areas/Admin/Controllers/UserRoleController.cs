@@ -60,9 +60,9 @@ namespace AspNetCoreHero.Boilerplate.Web.Areas.Admin.Controllers
             var roles = await _userManager.GetRolesAsync(user);
             var result = await _userManager.RemoveFromRolesAsync(user, roles);
             result = await _userManager.AddToRolesAsync(user, model.UserRoles.Where(x => x.Selected).Select(y => y.RoleName));
-            var currentUser = await _userManager.GetUserAsync(User);
-            await _signInManager.RefreshSignInAsync(currentUser);
-            await Infrastructure.Identity.Seeds.DefaultSuperAdminUser.SeedAsync(_userManager, _roleManager);
+            //var currentUser = await _userManager.GetUserAsync(User);
+            //await _signInManager.RefreshSignInAsync(currentUser);
+            //await Infrastructure.Identity.Seeds.DefaultSuperAdminUser.SeedAsync(_userManager, _roleManager);
             _notify.Success($"Updated Roles for User '{user.Email}'");
             return RedirectToAction("Index", new { userId = id });
         }

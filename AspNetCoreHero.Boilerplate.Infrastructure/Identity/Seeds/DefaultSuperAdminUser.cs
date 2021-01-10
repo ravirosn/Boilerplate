@@ -36,20 +36,21 @@ namespace AspNetCoreHero.Boilerplate.Infrastructure.Identity.Seeds
             //Seed Default User
             var defaultUser = new ApplicationUser
             {
-                UserName = "superadmin",
-                Email = "superadmin@gmail.com",
-                FirstName = "Mukesh",
-                LastName = "Murugan",
+                UserName = "ravirosn",
+                Email = "ravirosn@gmail.com",
+                FirstName = "Ravi Roshan",
+                LastName = "Verma",
+                PhoneNumber = "9849150145",
                 EmailConfirmed = true,
                 PhoneNumberConfirmed = true,
-                IsActive = true
+                IsActive = true                
             };
             if (userManager.Users.All(u => u.Id != defaultUser.Id))
             {
                 var user = await userManager.FindByEmailAsync(defaultUser.Email);
                 if (user == null)
                 {
-                    await userManager.CreateAsync(defaultUser, "123Pa$$word!");
+                    await userManager.CreateAsync(defaultUser, "Apple1$#");
                     await userManager.AddToRoleAsync(defaultUser, Roles.Basic.ToString());
                     await userManager.AddToRoleAsync(defaultUser, Roles.Moderator.ToString());
                     await userManager.AddToRoleAsync(defaultUser, Roles.Admin.ToString());
