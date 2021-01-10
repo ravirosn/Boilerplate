@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace AspNetCoreHero.Boilerplate.Infrastructure.Migrations.ApplicationDb
+namespace AspNetCoreHero.Boilerplate.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -96,7 +96,7 @@ namespace AspNetCoreHero.Boilerplate.Infrastructure.Migrations.ApplicationDb
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("AspNetCoreHero.EntityFrameworkCore.Auditing.Models.Audit", b =>
+            modelBuilder.Entity("AspNetCoreHero.EntityFrameworkCore.AuditTrail.Models.Audit", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

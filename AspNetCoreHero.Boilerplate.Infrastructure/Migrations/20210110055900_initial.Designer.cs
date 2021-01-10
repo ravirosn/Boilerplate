@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace AspNetCoreHero.Boilerplate.Infrastructure.Migrations.ApplicationDb
+namespace AspNetCoreHero.Boilerplate.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201225073900_initial")]
+    [Migration("20210110055900_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -98,7 +98,7 @@ namespace AspNetCoreHero.Boilerplate.Infrastructure.Migrations.ApplicationDb
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("AspNetCoreHero.EntityFrameworkCore.Auditing.Models.Audit", b =>
+            modelBuilder.Entity("AspNetCoreHero.EntityFrameworkCore.AuditTrail.Models.Audit", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

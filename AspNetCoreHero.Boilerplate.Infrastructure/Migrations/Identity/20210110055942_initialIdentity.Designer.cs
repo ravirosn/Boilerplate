@@ -7,17 +7,16 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace AspNetCoreHero.Boilerplate.Infrastructure.Migrations
+namespace AspNetCoreHero.Boilerplate.Infrastructure.Migrations.Identity
 {
     [DbContext(typeof(IdentityContext))]
-    [Migration("20201225073838_initial")]
-    partial class initial
+    [Migration("20210110055942_initialIdentity")]
+    partial class initialIdentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasDefaultSchema("Identity")
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");

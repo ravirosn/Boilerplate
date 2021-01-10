@@ -1,0 +1,10 @@
+For Migration from Zero position
+Delete all migrations and follow below steps to execute command in NPM
+make API as startup project with db name in connection sstring of API and Web Project
+open NPM and select Infrastructure project and run following commands step by step
+1. add-migration initial -context ApplicationDbContext 
+2. add-migration initialIdentity -context IdentityContext
+3. update-database -context IdentityContext
+4. update-database -context ApplicationDbContext
+
+Finally database is created in DB server provided in connection string
